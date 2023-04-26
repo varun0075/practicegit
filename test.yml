@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  django_todo_app:
+    image: 
+    container_name: 
+    ports:
+      - "8000:8000"
+    volumes:
+      - django_todo_volume:/app
+  
+  mysql_db:
+    image: mysql:latest
+    container_name:
+        environment:
+        - MYSQL_DATABASE=db
+        - MYSQL_ROOT_PASSWORD=test123
+    ports:
+        - "3306:3306"
+      
+volumes:
+  - django_todo_volume
